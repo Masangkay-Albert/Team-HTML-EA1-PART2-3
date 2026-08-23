@@ -12,18 +12,18 @@
   <header>
     <h2 class="logo">AM<span>.</span></h2>
 
-    <button id="menu-btn" aria-label="Open menu">
+    <button id="menu-toggle-btn" aria-label="Open menu">
       <i class="fa-solid fa-bars"></i>
     </button>
 
-    <nav id="nav">
+    <nav id="nav-menu">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
 
-    <button id="darkModeToggle" aria-label="Toggle dark mode">
+    <button id="dark-mode-toggle-btn" aria-label="Toggle dark mode">
       <i class="fa-solid fa-moon"></i>
     </button>
   </header>
@@ -39,7 +39,7 @@
     </div>
 
     <div class="hero-photo">
-      <img src="me.jpg" alt="Albert Masangkay">
+      <img src="assets/me.jpg" alt="Albert Masangkay">
     </div>
   </section>
 
@@ -84,27 +84,27 @@
 
   <section id="projects">
     <h2>My Projects</h2>
-    <div id="projectList"></div>
+    <div id="project-list"></div>
   </section>
 
   <section id="contact">
     <h2>Contact Me</h2>
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Full Name">
-      <input type="email" id="email" placeholder="Email Address">
-      <textarea id="message" rows="6" placeholder="Your Message"></textarea>
+    <form id="contact-form">
+      <input type="text" id="name-input" placeholder="Full Name">
+      <input type="email" id="email-input" placeholder="Email Address">
+      <textarea id="message-input" rows="6" placeholder="Your Message"></textarea>
       <button type="submit">Send Message</button>
-      <p id="formMsg"></p>
+      <p id="form-status-msg"></p>
     </form>
   </section>
 
-  <div id="projectModal" class="modal">
+  <div id="project-modal" class="modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <img id="modalImage" src="" alt="">
-      <h2 id="modalTitle"></h2>
-      <p id="modalDescription"></p>
-      <a id="modalLink" href="" target="_blank" rel="noopener">Visit Project</a>
+      <span class="close-btn">&times;</span>
+      <img id="modal-image" src="" alt="">
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <a id="modal-link" href="" target="_blank" rel="noopener">Visit Project</a>
     </div>
   </div>
 

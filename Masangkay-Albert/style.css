@@ -9,7 +9,6 @@
   --orange: #f26d4f;
   --card: #fffdf8;
   --contact-bg: #dce9bd;
-  --contact-ink: #171716;
 }
 
 * {
@@ -24,8 +23,6 @@ body {
   color: var(--ink);
   font-family: 'Plus Jakarta Sans', sans-serif;
   transition: .3s;
-  background-image: radial-gradient(var(--line) .7px, transparent .7px);
-  background-size: 18px 18px;
 }
 
 body.dark-mode {
@@ -35,7 +32,6 @@ body.dark-mode {
   --line: #3c3b36;
   --card: #22221f;
   --contact-bg: #29372b;
-  --contact-ink: #f4f0e8;
 }
 
 header {
@@ -48,7 +44,6 @@ header {
   padding: 10px 7%;
   background: var(--paper);
   border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(12px);
 }
 
 .logo {
@@ -69,31 +64,29 @@ nav a {
   text-decoration: none;
   font: 600 11px 'JetBrains Mono', monospace;
   text-transform: uppercase;
-  transition: .2s;
 }
 
-nav a:hover,
-nav a.active {
+nav a:hover, nav a.active {
   color: var(--orange);
 }
 
-#menu-btn {
-  display: none;
-  font-size: 18px;
-  background: none;
-  border: 0;
+#menu-toggle-btn, #dark-mode-toggle-btn {
+  border: 1px solid var(--line);
+  background: transparent;
   color: var(--ink);
   cursor: pointer;
 }
 
-#darkModeToggle {
-  border: 1px solid var(--line);
-  background: transparent;
-  color: var(--ink);
+#menu-toggle-btn {
+  display: none;
+  border: 0;
+  font-size: 18px;
+}
+
+#dark-mode-toggle-btn {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  cursor: pointer;
   font-size: 13px;
 }
 
@@ -105,18 +98,10 @@ nav a.active {
   padding: 8% 10%;
   background: var(--ink);
   color: var(--paper);
-  position: relative;
-  overflow: hidden;
-  max-width: none;
-  width: 100%;
-  margin: 0;
 }
 
 .hero-text {
-  position: relative;
-  z-index: 1;
   max-width: 760px;
-  min-width: 0;
   flex: 1;
 }
 
@@ -130,8 +115,6 @@ nav a.active {
 .hero h1 {
   font: 800 clamp(52px, 6vw, 92px)/.86 'Plus Jakarta Sans', sans-serif;
   letter-spacing: -1px;
-  white-space: nowrap;
-  max-width: 100%;
   margin-bottom: 32px;
 }
 
@@ -148,40 +131,17 @@ nav a.active {
 }
 
 .hero-photo {
-  position: relative;
   width: clamp(210px, 24vw, 320px);
   aspect-ratio: 1;
   flex: none;
 }
 
-.hero-photo::before {
-  content: "";
-  position: absolute;
-  inset: -22px;
-  border: 1px solid var(--lime);
-  border-radius: 50%;
-  opacity: .55;
-}
-
-.hero-photo::after {
-  content: "";
-  position: absolute;
-  inset: -10px;
-  border: 1px solid var(--lime);
-  border-radius: 50%;
-  opacity: .3;
-}
-
 .hero-photo img {
-  display: block;
-  position: relative;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 35%;
   border-radius: 50%;
   border: 4px solid var(--paper);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, .35);
 }
 
 .btn {
@@ -199,7 +159,6 @@ nav a.active {
 
 .btn:hover {
   background: var(--orange);
-  transform: translateY(-3px);
 }
 
 section {
@@ -209,7 +168,6 @@ section {
 }
 
 section h2 {
-  color: var(--ink);
   font: 800 clamp(38px, 5vw, 68px)/1 'Plus Jakarta Sans', sans-serif;
   letter-spacing: -1px;
   margin-bottom: 42px;
@@ -219,13 +177,7 @@ section h2 {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
   gap: 8%;
-  padding-top: 130px;
-  padding-bottom: 130px;
   border-bottom: 1px solid var(--line);
-}
-
-#about h2 {
-  margin: 0;
 }
 
 #about p {
@@ -233,11 +185,6 @@ section h2 {
   color: var(--muted);
   line-height: 1.9;
   font-size: 16px;
-}
-
-#skills {
-  padding-top: 120px;
-  padding-bottom: 120px;
 }
 
 .skills-container {
@@ -269,17 +216,7 @@ section h2 {
   margin-bottom: 15px;
 }
 
-.skill-card h3 {
-  color: var(--ink);
-  font-size: 15px;
-}
-
-#projects {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-
-#projectList {
+#project-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
@@ -298,11 +235,9 @@ section h2 {
 }
 
 .project-card img {
-  display: block;
   width: 100%;
   height: 220px;
   object-fit: cover;
-  filter: saturate(.9);
 }
 
 .project-content {
@@ -315,14 +250,11 @@ section h2 {
 }
 
 .project-content p {
-  color: var(--ink);
   margin-bottom: 20px;
   line-height: 1.6;
 }
 
-.project-content button {
-  width: auto;
-  padding: 12px 18px;
+.project-content button, #contact form button {
   border: 0;
   background: var(--ink);
   color: var(--paper);
@@ -330,96 +262,63 @@ section h2 {
   font-family: 'JetBrains Mono', monospace;
   text-transform: uppercase;
   font-size: 12px;
-  letter-spacing: .5px;
   transition: .3s;
 }
 
-.project-content button:hover {
+.project-content button {
+  padding: 12px 18px;
+}
+
+.project-content button:hover, #contact form button:hover {
   background: var(--orange);
   color: var(--ink);
 }
 
 #contact {
   background: var(--contact-bg);
-  color: var(--contact-ink);
-  max-width: none;
+  color: var(--ink);
   padding: 100px 10%;
   display: grid;
   grid-template-columns: minmax(180px, .65fr) minmax(320px, 1.35fr);
   gap: 8%;
-  align-items: start;
-}
-
-#contact > h2 {
-  color: var(--contact-ink);
-  margin: 0;
-  font-size: clamp(42px, 5vw, 68px);
 }
 
 #contact form {
-  width: 100%;
-  max-width: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-#contact input,
-#contact textarea {
+#contact input, #contact textarea {
   padding: 18px 0;
   border: 0;
   border-bottom: 2px solid rgba(23, 23, 22, .35);
-  border-radius: 0;
   background: rgba(255, 255, 255, .58);
   color: var(--ink);
   font: 400 16px 'Plus Jakarta Sans', sans-serif;
 }
 
-#contact input::placeholder,
-#contact textarea::placeholder {
-  color: var(--muted);
-  opacity: 1;
-}
-
-#contact input:focus,
-#contact textarea:focus {
+#contact input:focus, #contact textarea:focus {
   outline: none;
   border-bottom-color: var(--orange);
-}
-
-body.dark-mode #contact input,
-body.dark-mode #contact textarea {
-  background: rgba(0, 0, 0, .18);
-  border-bottom-color: rgba(244, 240, 232, .35);
-}
-
-body.dark-mode #contact input:focus,
-body.dark-mode #contact textarea:focus {
-  border-bottom-color: var(--lime);
 }
 
 #contact form button {
   align-self: flex-start;
   padding: 17px 24px;
-  border: 0;
-  background: var(--ink);
-  color: var(--paper);
-  cursor: pointer;
-  font-family: 'JetBrains Mono', monospace;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: .5px;
-  transition: .3s;
 }
 
-#contact form button:hover {
-  background: var(--orange);
-  color: var(--ink);
-}
-
-#formMsg {
+#form-status-msg {
   text-align: center;
   font-weight: bold;
+}
+
+#form-status-msg.error {
+  color: #b42318;
+}
+
+#form-status-msg.success {
+  color: #176b3a;
 }
 
 .modal {
@@ -433,14 +332,16 @@ body.dark-mode #contact textarea:focus {
   z-index: 2000;
 }
 
+.modal.show-modal {
+  display: flex;
+}
+
 .modal-content {
   background: var(--card);
   color: var(--ink);
   width: 90%;
   max-width: 700px;
   overflow: hidden;
-  position: relative;
-  animation: popup .3s;
 }
 
 .modal-content img {
@@ -467,7 +368,7 @@ body.dark-mode #contact textarea:focus {
   text-decoration: none;
 }
 
-.close {
+.close-btn {
   position: absolute;
   top: 15px;
   right: 20px;
@@ -482,24 +383,13 @@ body.dark-mode #contact textarea:focus {
   transition: .6s;
 }
 
-.show {
+.hidden.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-@keyframes popup {
-  from {
-    transform: scale(.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
 @media (max-width: 768px) {
-  #menu-btn {
+  #menu-toggle-btn {
     display: block;
   }
 
@@ -519,62 +409,30 @@ body.dark-mode #contact textarea:focus {
   }
 
   .hero {
-    padding: 72px 8%;
     flex-direction: column-reverse;
     align-items: flex-start;
   }
 
-  .hero-photo {
-    width: min(280px, 78vw);
-    align-self: center;
-  }
-
   .hero h1 {
-    white-space: normal;
     font-size: clamp(52px, 13vw, 84px);
-  }
-
-  section {
-    padding: 70px 8%;
   }
 
   .skills-container {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  #projectList {
+  #project-list {
     grid-template-columns: 1fr;
   }
 
-  #about {
+  #about, #contact {
     display: block;
-  }
-
-  #about h2 {
-    margin-bottom: 28px;
-  }
-
-  #contact {
-    display: block;
-    padding: 80px 8%;
-  }
-
-  #contact > h2 {
-    margin-bottom: 40px;
-  }
-
-  .project-card {
-    box-shadow: 5px 5px 0 var(--line);
   }
 }
 
 @media (max-width: 480px) {
   .skills-container {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .project-card img {
-    height: 210px;
   }
 
   section h2 {
