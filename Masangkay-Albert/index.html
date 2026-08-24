@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Albert Masangkay | IT Student</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <h2 class="logo">AM<span>.</span></h2>
+
+    <button id="menu-toggle-btn" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav id="nav-menu">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button id="dark-mode-toggle-btn" aria-label="Toggle dark mode">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Information Technology student</p>
+      <h1>Albert<br><em>Masangkay</em></h1>
+      <p>I am an IT student learning to build clear, responsive digital experiences through code, curiosity, and practice.</p>
+      <a href="#projects" class="btn">
+        Explore my work <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <div class="hero-photo">
+      <img src="assets/me.jpg" alt="Albert Masangkay">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am an Information Technology student who enjoys creating modern, responsive,
+      and user-friendly websites. I am continuously learning new technologies and
+      improving my programming skills through different projects.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-card">
+        <i class="fa-brands fa-html5"></i>
+        <h3>HTML5</h3>
+      </div>
+      <div class="skill-card">
+        <i class="fa-brands fa-css3-alt"></i>
+        <h3>CSS3</h3>
+      </div>
+      <div class="skill-card">
+        <i class="fa-brands fa-js"></i>
+        <h3>JavaScript</h3>
+      </div>
+      <div class="skill-card">
+        <i class="fa-brands fa-react"></i>
+        <h3>React</h3>
+      </div>
+      <div class="skill-card">
+        <i class="fa-solid fa-database"></i>
+        <h3>MySQL</h3>
+      </div>
+      <div class="skill-card">
+        <i class="fa-brands fa-git-alt"></i>
+        <h3>Git</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div id="project-list"></div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+      <input type="text" id="name-input" placeholder="Full Name">
+      <input type="email" id="email-input" placeholder="Email Address">
+      <textarea id="message-input" rows="6" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+      <p id="form-status-msg"></p>
+    </form>
+  </section>
+
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <img id="modal-image" src="" alt="">
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <a id="modal-link" href="" target="_blank" rel="noopener">Visit Project</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
