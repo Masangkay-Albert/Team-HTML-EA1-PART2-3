@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alarie Somuelo | BSIT Student</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <a href="#top" class="logo">AS<span>.</span></a>
+
+    <button id="menu-toggle-btn" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav id="nav-menu">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button id="theme-toggle-btn" aria-label="Toggle dark mode">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-text">
+      <p class="eyebrow">$ whoami</p>
+      <h1>Alarie<br><em>Somuelo</em><span class="cursor">_</span></h1>
+      <p>BSIT student learning to build things one commit at a time, currently sharpening my front-end skills and figuring out the terminal along the way.</p>
+      <a href="#projects" class="btn">
+        View my work <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="hero-photo">
+      <div class="photo-frame">
+                <img src="picture.jpg" alt="Alarie Somuelo">
+      </div>
+      <span class="tag-sticker">BSIT</span>
+    </div>
+  </section>
+
+  <section id="about">
+    <p class="eyebrow">$ cat about.md</p>
+    <h2>About Me</h2>
+    <div class="about-grid">
+      <p>
+        I'm Alarie, a BSIT student who's still early in the journey but genuinely enjoys the process,
+        the small wins of a script finally running, a layout finally lining up, a merge that doesn't conflict.
+        I'm most interested in front-end development and figuring out how good design and clean code work together.
+        Outside of coursework, I'm a competitive swimmer, training and competing regularly. It's taught me a lot of the same
+        patience that coding does, show up, put in the reps, fix what's not working, and the results follow.
+      </p>
+      <div class="about-facts">
+        <div class="fact">
+          <span class="fact-label">Focus</span>
+          <span class="fact-value">Front-End Development</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Status</span>
+          <span class="fact-value">BSIT Student</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Based in</span>
+          <span class="fact-value">Philippines</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Outside code</span>
+          <span class="fact-value">Competitive Swimmer</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <p class="eyebrow">$ skills --list</p>
+    <h2>Skills</h2>
+
+    <div class="skills-group">
+      <h3>Core</h3>
+      <div class="chip-row">
+        <span class="chip"><i class="fa-brands fa-html5"></i> HTML5</span>
+        <span class="chip"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+        <span class="chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+        <span class="chip"><i class="fa-solid fa-database"></i> SQL</span>
+      </div>
+    </div>
+
+    <div class="skills-group">
+      <h3>Tools</h3>
+      <div class="chip-row">
+        <span class="chip"><i class="fa-brands fa-git-alt"></i> Git</span>
+        <span class="chip"><i class="fa-brands fa-github"></i> GitHub</span>
+        <span class="chip"><i class="fa-solid fa-code"></i> VS Code</span>
+        <span class="chip"><i class="fa-brands fa-figma"></i> Figma</span>
+      </div>
+    </div>
+
+    <div class="skills-group">
+      <h3>Currently Learning</h3>
+      <div class="chip-row">
+        <span class="chip chip-learning"><i class="fa-brands fa-react"></i> React</span>
+        <span class="chip chip-learning"><i class="fa-solid fa-terminal"></i> Command Line</span>
+        <span class="chip chip-learning"><i class="fa-solid fa-server"></i> Node.js</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <p class="eyebrow">$ ls projects/</p>
+    <h2>Projects</h2>
+    <p class="section-note">Placeholder projects below. Swap these for your real ones in <code>script.js</code>.</p>
+    <div id="project-list"></div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-intro">
+      <p class="eyebrow">$ contact --send</p>
+      <h2>Let's Talk</h2>
+      <p>Have a project, an opportunity, or just want to say hi? Send me a message.</p>
+      <div class="contact-links">
+        <a href="mailto:alariesomuelo@gmail.com"><i class="fa-solid fa-envelope"></i> alariesomuelo@gmail.com</a>
+        <a href="#" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+      </div>
+    </div>
+    <form id="contact-form">
+      <input type="text" id="name-input" placeholder="Full Name">
+      <input type="email" id="email-input" placeholder="Email Address">
+      <textarea id="message-input" rows="6" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+      <p id="form-status-msg"></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>// built by Alarie Somuelo, 2026</p>
+  </footer>
+
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <img id="modal-image" src="" alt="">
+      <div class="modal-body">
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+        <a id="modal-link" href="" target="_blank" rel="noopener">Visit Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
