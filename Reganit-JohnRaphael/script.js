@@ -4,25 +4,48 @@ const projectsData = [
     title: "Cook Together",
     image: "assets/cook.png",
     description: "A web develoment final project that allows users to share and discover recipes as well as join together .",
-    tags: ["HTML", "CSS", "JavaScript, PHP"],
+    tags: ["HTML", "CSS", "JavaScript", "PHP"],
     link: "https://github.com/Raphael2334/dlsud-web-development-cook-together",
   },
   {
     title: "Lazo Dental",
     image: "assets/dental.png",
     description: "An ongoing capstone project that aims to provide a dental clinic patient management and appointment system for a Dental Clinic.",
-    tags: ["HTML", "CSS", "JavaScript, PHP"],
+    tags: ["HTML", "CSS", "JavaScript", "PHP"],
     link: "https://github.com/Raphael2334/SOLCapstone",
   },
 ];
+
+// TESTIMONIALS DATA
+const testimonialsData = [
+  {
+    name: "Team Member 1",
+    quote: "Team member quote",
+    initial: "DI",
+    role: "Role",
+  },
+  {
+    name: "Team Member 2",
+    quote: "Team member quote",
+    initial: "DI",
+    role: "Role"
+  },
+  {
+    name: "Team Member 3",
+    quote: "Team member quote",
+    initial: "DI",
+    role: "Role"
+  }
+];
+
+
 
 // DOM ELEMENTS
 const menuToggleBtn = document.getElementById("menu-toggle-btn");
 const navMenu = document.getElementById("nav-menu");
 const navLinks = document.querySelectorAll("nav a");
 const projectList = document.getElementById("project-list");
-const contactForm = document.getElementById("contact-form");
-const formStatusMsg = document.getElementById("form-status-msg");
+const testimonialsList = document.getElementById("testimonials-list");
 
 // NAVIGATION
 function toggleNavMenu() {
@@ -80,72 +103,31 @@ function renderProjects() {
   });
 }
 
-// CONTACT FORM
-function isValidEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+// RENDER TESTIMONIALS
+function createTestimonialCard(testimonial) {
+  const card = document.createElement("div");
+  card.className = "testimonial-card";
+
+  card.innerHTML = `
+    <p class="quote">"${testimonial.quote}"</p>
+    <div class="author">
+      <div class="avatar">${testimonial.initial}</div>
+      <div>
+        <div class="name">${testimonial.name}</div>
+        <div class="role">${testimonial.role}</div>
+      </div>
+    </div>
+  `;
+
+  return card;
 }
 
-function showFormMessage(message, isSuccess) {
-  formStatusMsg.textContent = message;
-  formStatusMsg.className = isSuccess ? "success" : "error";
-}
-
-function handleContactSubmit(event) {
-  event.preventDefault();
-
-  const name = document.getElementById("name-input").value.trim();
-  const email = document.getElementById("email-input").value.trim();
-  const message = document.getElementById("message-input").value.trim();
-
-  if (!name || !email || !message) {
-    showFormMessage("Please complete all fields.", false);
-    return;
-  }
-
-  if (!isValidEmail(email)) {
-    showFormMessage("Please enter a valid email address.", false);
-    return;
-  }
-
-  showFormMessage("Sending...", true);
-
-  setTimeout(() => {
-    showFormMessage(
-      "Message sent successfully! I'll get back to you soon.",
-      true,
-    );
-    contactForm.reset();
-  }, 1000);
-}
-
-// SCROLL ANIMATIONS
-function initScrollAnimations() {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateY(0)";
-        }
-      });
-    },
-    {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
-    },
-  );
-
-  const animatedElements = document.querySelectorAll(
-    ".skill-card, .project-card, .interest-card",
-  );
-
-  animatedElements.forEach((el, i) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    el.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
-    observer.observe(el);
+function renderTestimonials() {
+  testimonialsData.forEach((testimonial) => {
+    testimonialsList.appendChild(createTestimonialCard(testimonial));
   });
 }
+
 
 // EVENT LISTENERS
 menuToggleBtn.addEventListener("click", toggleNavMenu);
@@ -156,9 +138,9 @@ navLinks.forEach((link) => {
 
 window.addEventListener("scroll", highlightActiveNavLink);
 
-contactForm.addEventListener("submit", handleContactSubmit);
 
-// INIT
+
 renderProjects();
+renderTestimonials();
 initScrollAnimations();
 highlightActiveNavLink();
