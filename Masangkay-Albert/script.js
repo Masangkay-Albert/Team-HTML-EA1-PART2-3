@@ -46,12 +46,14 @@ function toggleDarkMode() {
     : '<i class="fa-solid fa-moon"></i>';
 }
 
-function createProjectCard(project) {
+function createProjectCard(project, index) {
   const card = document.createElement("div");
   card.className = "project-card hidden";
+  const figNumber = String(index + 1).padStart(2, "0");
   card.innerHTML = `
     <img src="${project.image}" alt="${project.title}">
     <div class="project-content">
+      <span class="fig-label">Fig. ${figNumber}</span>
       <h3>${project.title}</h3>
       <p>${project.description.substring(0, 70)}...</p>
       <button>View Details</button>
@@ -64,8 +66,8 @@ function createProjectCard(project) {
 }
 
 function renderProjectCards() {
-  projectsData.forEach((project) => {
-    projectListContainer.appendChild(createProjectCard(project));
+  projectsData.forEach((project, index) => {
+    projectListContainer.appendChild(createProjectCard(project, index));
   });
 }
 
@@ -167,7 +169,7 @@ initScrollRevealObserver();
 
 document.addEventListener('DOMContentLoaded', function() {
   const testimonialCards = document.querySelectorAll('.testimonial-card');
-  
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
