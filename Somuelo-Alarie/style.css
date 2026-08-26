@@ -335,6 +335,63 @@ section h2 {
   color: var(--blue);
 }
 
+/* ===== TESTIMONIALS ===== */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: .25s;
+}
+
+.testimonial-card:hover {
+  border-color: var(--orange);
+  box-shadow: 0 12px 30px rgba(217, 83, 26, .14);
+  transform: translateY(-4px);
+}
+
+.testimonial-card .quote {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-left: 2px solid var(--orange);
+  padding-left: 12px;
+}
+
+@media (max-width: 860px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark mode */
+body.dark-mode .testimonial-card {
+  background: #211a15;
+  border-color: #3a2f28;
+}
+
+body.dark-mode .testimonial-card:hover {
+  border-color: var(--orange);
+}
+
+body.dark-mode .testimonial-card .quote {
+  color: #b8a99a;
+}
+
 /* ===== PROJECTS ===== */
 #project-list {
   display: grid;
