@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+ 
+:root {
+  --paper: #eef1f7;
+  --ink: #10192b;
+  --muted: #5b6b85;
+  --line: #c7d2e3;
+  --card: #ffffff;
+  --accent: #ff8a3d;
+  --accent-2: #2f6fed;
+  --contact-bg: #dbe6f7;
+}
+ 
+body.dark-mode {
+  --paper: #0c111d;
+  --ink: #eef1f7;
+  --muted: #8b93a7;
+  --line: #26314a;
+  --card: #131a2b;
+  --contact-bg: #142035;
+}
+ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+ 
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  transition: background .3s, color .3s;
+}
+ 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 42px 42px;
+  opacity: .35;
+  mask-image: radial-gradient(ellipse at top, black 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+ 
+body.dark-mode::before {
+  opacity: .5;
+}
+ 
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+ 
+section {
+  position: relative;
+  z-index: 1;
+  padding: 100px 10%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+ 
+.sheet-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent);
+  font: 600 11px 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 18px;
+}
+ 
+.sheet-label::after {
+  content: "";
+  width: 60px;
+  height: 1px;
+  background: var(--line);
+}
+ 
+section h2 {
+  font: 700 clamp(34px, 5vw, 58px)/1 'Space Grotesk', sans-serif;
+  letter-spacing: -1px;
+  margin-bottom: 40px;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: .6s;
+}
+ 
+.hidden.show {
+  opacity: 1;
+  transform: translateY(0);
+}

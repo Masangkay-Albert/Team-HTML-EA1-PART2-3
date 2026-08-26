@@ -1,0 +1,110 @@
+#contact {
+  background: var(--contact-bg);
+  color: var(--ink);
+  padding: 100px 10%;
+  display: grid;
+  grid-template-columns: minmax(180px, .65fr) minmax(320px, 1.35fr);
+  gap: 8%;
+}
+ 
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+ 
+#contact input, #contact textarea {
+  padding: 16px 0;
+  border: 0;
+  border-bottom: 2px solid rgba(16, 25, 43, .3);
+  background: transparent;
+  color: var(--ink);
+  font: 400 16px 'Inter', sans-serif;
+}
+ 
+body.dark-mode #contact input,
+body.dark-mode #contact textarea {
+  border-bottom-color: rgba(238, 241, 247, .25);
+}
+ 
+#contact input::placeholder, #contact textarea::placeholder {
+  color: var(--muted);
+}
+ 
+#contact input:focus, #contact textarea:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+ 
+#contact form button {
+  align-self: flex-start;
+  padding: 16px 24px;
+}
+ 
+#form-status-msg {
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+}
+ 
+#form-status-msg.error {
+  color: #c0392b;
+}
+ 
+#form-status-msg.success {
+  color: #1c7a4d;
+}
+
+@media (max-width: 768px) {
+  #menu-toggle-btn {
+    display: block;
+  }
+ 
+  nav {
+    position: absolute;
+    top: 66px;
+    right: 0;
+    background: var(--paper);
+    width: 220px;
+    flex-direction: column;
+    display: none;
+    padding: 20px;
+    border: 1px solid var(--line);
+    gap: 18px;
+  }
+ 
+  nav.show {
+    display: flex;
+  }
+ 
+  .hero {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+ 
+  .hero h1 {
+    font-size: clamp(44px, 13vw, 76px);
+  }
+ 
+  #project-list {
+    grid-template-columns: 1fr;
+  }
+ 
+  #about, #contact {
+    display: block;
+  }
+ 
+  #about h2, #contact h2 {
+    margin-bottom: 20px;
+  }
+}
+ 
+@media (max-width: 480px) {
+  section h2 {
+    font-size: 28px;
+  }
+ 
+  .skill-card {
+    padding: 12px 16px;
+  }
+}
