@@ -19,10 +19,10 @@ const projectsData = [
 // TESTIMONIALS DATA
 const testimonialsData = [
   {
-    name: "Team Member 1",
-    quote: "Team member quote",
-    initial: "DI",
-    role: "Role",
+    name: "John Albert Masangkay",
+    quote: "John Raphael is a dedicated and reliable person who consistently puts effort into his work. He stays committed to his responsibilities, works well with others, and always strives to improve and deliver quality results.",
+    initial: "D.",
+    role: "Developer",
   },
   {
     name: "Team Member 2",
