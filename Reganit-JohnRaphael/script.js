@@ -21,26 +21,19 @@ const testimonialsData = [
   {
     name: "John Albert Masangkay",
     quote: "John Raphael is a dedicated and reliable person who consistently puts effort into his work. He stays committed to his responsibilities, works well with others, and always strives to improve and deliver quality results.",
-    initial: "D.",
-    role: "Developer",
   },
   {
-    name: "James Saluta",
-    quote: "James is a highly skilled and dedicated individual who consistently demonstrates a strong work ethic and a commitment to excellence. He is reliable, detail-oriented, and always willing to go the extra mile to ensure the success of any project he is involved in.",
-    initial: "DI",
-    role: "Role"
+    name: "Team Member 2",
+    quote: "Team member quote",
+
   },
   {
     name: "Team Member 3",
     quote: "Team member quote",
-    initial: "DI",
-    role: "Role"
   },
   {
     name: "Team Member 4",
     quote: "Team member quote",
-    initial: "DI",
-    role: "Role"
   }
 ];
 
@@ -117,10 +110,8 @@ function createTestimonialCard(testimonial) {
   card.innerHTML = `
     <p class="quote">"${testimonial.quote}"</p>
     <div class="author">
-      <div class="avatar">${testimonial.initial}</div>
       <div>
         <div class="name">${testimonial.name}</div>
-        <div class="role">${testimonial.role}</div>
       </div>
     </div>
   `;
