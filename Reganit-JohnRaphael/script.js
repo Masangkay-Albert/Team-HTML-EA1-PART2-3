@@ -23,6 +23,12 @@ const testimonialsData = [
     quote: "John Raphael is a dedicated and reliable person who consistently puts effort into his work. He stays committed to his responsibilities, works well with others, and always strives to improve and deliver quality results.",
   },
   {
+    name: "Alarie Somuelo",
+    quote: "John Raphael is a reliable teammate who communicates well, takes responsibility for his tasks, and consistently helps the group.",
+    initial: "A.",
+    role: "Classmate",
+  },
+  {
     name: "Team Member 2",
     quote: "Team member quote",
 
