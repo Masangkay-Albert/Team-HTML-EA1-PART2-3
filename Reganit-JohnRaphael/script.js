@@ -25,8 +25,8 @@ const testimonialsData = [
     role: "Developer",
   },
   {
-    name: "Team Member 2",
-    quote: "Team member quote",
+    name: "James Saluta",
+    quote: "James is a highly skilled and dedicated individual who consistently demonstrates a strong work ethic and a commitment to excellence. He is reliable, detail-oriented, and always willing to go the extra mile to ensure the success of any project he is involved in.",
     initial: "DI",
     role: "Role"
   },
