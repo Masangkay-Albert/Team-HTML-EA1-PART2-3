@@ -25,6 +25,12 @@ const testimonialsData = [
     role: "Developer",
   },
   {
+    name: "Alarie Somuelo",
+    quote: "John Raphael is a reliable teammate who communicates well, takes responsibility for his tasks, and consistently helps the group.",
+    initial: "A.",
+    role: "Classmate",
+  },
+  {
     name: "Team Member 2",
     quote: "Team member quote",
     initial: "DI",
