@@ -29,7 +29,7 @@ const testimonialsData = [
   },
   {
     name: "Gracy Luna",
-    quote: "John is very helpful and easy to work with.",
+    quote: "Very helpful and easy to work with. Great teammate!",
   },
   {
     name: "Team Member 4",
