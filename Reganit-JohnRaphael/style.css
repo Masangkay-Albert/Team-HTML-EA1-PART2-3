@@ -357,6 +357,65 @@ section {
   font-family: "JetBrains Mono", monospace;
 }
 
+/* TESTIMONIALS */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+}
+
+.testimonial-card {
+  background: var(--card);
+  padding: 1.8rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  border-top: 4px solid var(--orange);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-card .quote {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+.testimonial-card .author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.testimonial-card .author .avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.testimonial-card .author .name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.testimonial-card .author .role {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
 /* INTERESTS */
 .interests-grid {
   display: grid;
