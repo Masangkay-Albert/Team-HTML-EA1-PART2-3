@@ -35,6 +35,12 @@ const testimonialsData = [
     quote: "Team member quote",
     initial: "DI",
     role: "Role"
+  },
+  {
+    name: "Team Member 4",
+    quote: "Team member quote",
+    initial: "DI",
+    role: "Role"
   }
 ];
 
