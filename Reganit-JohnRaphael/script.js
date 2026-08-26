@@ -20,18 +20,21 @@ const projectsData = [
 const testimonialsData = [
   {
     name: "A",
-    quote: "B",
-    initial: "C"
+    quote: "",
+    initial: "",
+    role: ""
   },
   {
     name: "",
     quote: "",
-    initial: ""
+    initial: "",
+    role: ""
   },
   {
     name: "",
     quote: "",
-    initial: ""
+    initial: "",
+    role: ""
   }
 ];
 
@@ -111,6 +114,7 @@ function createTestimonialCard(testimonial) {
       <div class="avatar">${testimonial.initial}</div>
       <div>
         <div class="name">${testimonial.name}</div>
+        <div class="role">${testimonial.role}</div>
       </div>
     </div>
   `;
