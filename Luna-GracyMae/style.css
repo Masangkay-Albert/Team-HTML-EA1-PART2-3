@@ -192,6 +192,53 @@ body {
 }
 
 /* ===========================
+   TESTIMONIALS SECTION
+=========================== */
+#testimonials {
+  background-color: #ffffff;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 18px;
+  border-left: 4px solid #00c3ff;
+  padding: 1.75rem;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-accent {
+  color: #00c3ff;
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.testimonial-quote {
+  color: #444;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.testimonial-name {
+  color: #1e3c72;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.testimonial-role {
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* ===========================
    SOCIALS SECTION
 =========================== */
 #socials {
