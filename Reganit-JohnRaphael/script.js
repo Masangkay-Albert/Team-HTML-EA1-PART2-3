@@ -19,22 +19,22 @@ const projectsData = [
 // TESTIMONIALS DATA
 const testimonialsData = [
   {
-    name: "A",
-    quote: "",
-    initial: "",
-    role: ""
+    name: "Team Member 1",
+    quote: "Team member quote",
+    initial: "DI",
+    role: "Role",
   },
   {
-    name: "",
-    quote: "",
-    initial: "",
-    role: ""
+    name: "Team Member 2",
+    quote: "Team member quote",
+    initial: "DI",
+    role: "Role"
   },
   {
-    name: "",
-    quote: "",
-    initial: "",
-    role: ""
+    name: "Team Member 3",
+    quote: "Team member quote",
+    initial: "DI",
+    role: "Role"
   }
 ];
 
