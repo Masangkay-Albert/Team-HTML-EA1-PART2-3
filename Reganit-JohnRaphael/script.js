@@ -36,10 +36,6 @@ const testimonialsData = [
   {
     name: "Gracy Luna",
     quote: "Very helpful and easy to work with. Great teammate!",
-  },
-  {
-    name: "Team Member 4",
-    quote: "Team member quote",
   }
 ];
 
